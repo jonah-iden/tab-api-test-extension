@@ -8,7 +8,7 @@ export function activate(context: vscode.ExtensionContext) {
 		});
 	});
 	
-	let disposable = vscode.commands.registerCommand('tab-test.closeActiveTab', () => {
+	let disposable1 = vscode.commands.registerCommand('tab-test.closeActiveTab', () => {
 		const activeTabGroup = tabGroups.activeTabGroup;
 		const activeTab = activeTabGroup.activeTab;
 		if(activeTab) {
@@ -18,7 +18,15 @@ export function activate(context: vscode.ExtensionContext) {
 			tabGroups.close(activeTab);
 		}
 	});
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(disposable1);
+
+	let disposable2 = vscode.commands.registerCommand('tab-test.closeActiveTabGroup', () => {
+		const activeTabGroup = tabGroups.activeTabGroup;
+		if(activeTabGroup) {
+			tabGroups.close(activeTabGroup);
+		}
+	});
+	context.subscriptions.push(disposable2);
 }
 
 export function deactivate() {}
