@@ -1,3 +1,4 @@
-# tab-api-test-extension
+# tab-test README
 
-Extension to test tab api. Creates a command which closes the active tab. 
+Hello! This is a test of the Tab API.
+It creates a command which closes the active Tab.
